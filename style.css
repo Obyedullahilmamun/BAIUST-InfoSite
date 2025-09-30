@@ -1,0 +1,320 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background-color: #f9f9f9;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* Header */
+.header {
+  height: 70px;
+  width: 100%;
+  background-color: #e0f4ff;
+  position: fixed;
+  top: 0; left: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  z-index: 1000;
+  /* justify-content: space-between; */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-container img {
+  height: 50px;
+}
+
+.baiust {
+  color: #007a3d;
+  font-weight: bold;
+}
+
+/* Navbar */
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-left: 100px;
+}
+
+.navigation a {
+  color: #f2f2f2;
+  background-color: #112201b7;
+  padding: 12px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.navigation a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.navigation a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Hamburger icon */
+.navigation .icon {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+  background: none;
+  padding: 12px 16px;
+}
+
+
+/* ===== About Section  ===== */
+.about {
+  margin: 0 20px 20px 20px; /* top 0, right 20px, bottom 20px, left 20px */
+  padding: 10px 0;           /* slight vertical padding */
+}
+
+.about h1,
+.about h3,
+.about p,
+.about ul,
+.about ol {
+  margin-bottom: 10px;       /* consistent spacing between headings, paragraphs, lists */
+}
+
+/* Optional: indent nested lists slightly */
+.about ul,
+.about ol {
+  padding-left: 20px;
+}
+
+.about ol li {
+  margin-bottom: 5px;        /* spacing between list items */
+}
+
+
+/* ===== Contact Section ===== */
+.contact {
+  margin: 0 20px 20px 20px; /* top 0, right 20px, bottom 20px, left 20px */
+  padding: 10px 0;           /* optional: slight vertical padding */
+}
+
+.contact h1,
+.contact h3,
+.contact p {
+  margin-bottom: 10px;       /* consistent spacing between elements */
+}
+
+.more_information {
+  margin-top: 15px;
+}
+
+.more_information a.website {
+  color: #007780;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.more_information a.website:hover {
+  text-decoration: underline;
+}
+
+
+/* Main Content */    
+.main-container {
+  margin-top: 70px;          /* space for fixed header */
+  padding: 0;
+  flex: 1 0 auto;                
+}
+
+
+.banner-container {
+  background-image: url("./image/baiust_proposed_campus.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 600px;       /* use min-height instead of fixed height */
+  text-align: center;
+  display: flex;           /* center content vertically */
+  flex-direction: column;
+  justify-content: center; /* center vertically */
+  align-items: center;
+  padding: 60px 20px;      /* balanced padding */
+  color: #113F67;
+  font-size: 35px;
+}
+
+.banner-text {
+  color: #16C47F;        
+  background: #F5F5F0;   
+  padding: 0.2em 0.5em;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+
+.description {
+  font-size: 17px;
+  color: #222222;
+  max-width: 700px;
+  margin: 18px auto;
+  padding: 18px 24px;
+  border-radius: 10px;
+  background: rgba(207, 222, 197, 0.85); /* Semi-transparent white */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  line-height: 1.7;
+}
+
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  background-color: #00c57d;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #04AA6D;
+  color: #fff;
+}
+
+
+/* Footer */
+.footer {
+  flex-shrink: 0;       /* prevent shrinking */
+  text-align: center;
+  background-color: #e0f4ff;
+  padding: 15px;
+  color: #333;
+  margin-top: 0;        /* remove any extra margin */
+}
+
+
+/* Responsive styles */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .banner-container {
+    min-height: 1250px;      
+    font-size: 26px;        /* medium banner text */
+    padding: 60px 25px;     /* balanced padding for tablets */
+  }
+
+  .banner-container h1 {
+    font-size: 26px;
+    line-height: 1.3;
+    margin-bottom: 18px;
+  }
+
+  .description {
+    font-size: 15px;        /* readable on tablet */
+    max-width: 650px;
+    margin: 15px auto;
+  }
+
+  .footer {
+    font-size: 15px;        /* adjust footer for tablet */
+  }
+}
+
+
+
+@media screen and (max-width: 768px) {
+      /* Hide links by default, show only hamburger */
+  .navigation a:not(.icon) {
+    display: none;
+  }
+
+  /* Hamburger always visible at top-right */
+  .navigation a.icon {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    background: #333;
+    color: #fff;
+    font-size: 22px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    z-index: 2000;
+  }
+
+  /* Dropdown menu (when active) */
+  .navigation.responsive {
+    position: absolute;
+    top: 70px;   /* below header */
+    right: 15px;
+    background-color: #5f897e;
+    width: 120px;
+    border-radius: 0 0 6px 6px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    z-index: 1500;
+  }
+
+  .navigation.responsive a {
+    display: block;
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid #444;
+    color: #ffffff;
+  }
+
+  .navigation.responsive a:hover {
+    background-color: #04AA6D;
+    color: #9c5525;
+  }
+
+  .navigation.responsive a:last-child {
+    border-bottom: none;
+  }
+
+  /* Keep hamburger in header even when menu open */
+  .navigation.responsive a.icon {
+    position: absolute;
+    top: -50px;  /* place it back into header */
+    right: 0;
+    background: none;
+    border: none;
+  }
+
+   .banner-container {
+    min-height: 800px;    
+    font-size: 22px;
+  }
+
+  .banner-container h1 {
+    font-size: 22px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .footer {
+    font-size: 14px;
+    
+  }
+}
